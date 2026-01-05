@@ -24,6 +24,3 @@ export const protectRoute=async(req, res, next)=>{
         })
     }
 }
-
-// controller check if user is authenticated
-export const checkAuth=(req, res)=>{}

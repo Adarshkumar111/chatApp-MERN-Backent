@@ -4,6 +4,7 @@ import cors from "cors"
 import http from "http"
 import { connect } from "http2"
 import { connectDB } from "./lib/db.js"
+import userRouter from "./routes/user.routes.js"
 
 const app=express()
 const server=http.createServer(app)
@@ -15,6 +16,9 @@ app.use(cors())
 app.use("/api/status",(req, res)=>{
     res.send("Server is live")
 })
+
+// route setup
+app.use("/api/auth", userRouter)
 
 // mongodb connected
 await connectDB()
